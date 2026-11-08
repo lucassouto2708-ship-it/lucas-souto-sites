@@ -45,6 +45,12 @@ h1 em{color:var(--blue)}
 .ascii-bg a{color:var(--blue);pointer-events:auto;transition:background .2s}
 .ascii-bg a:hover{background:var(--blue);color:#fff}
 
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.me{border:1.5px solid var(--ink);box-shadow:10px 10px 0 var(--blue);background:var(--paper);max-width:400px;justify-self:end;width:100%}
+.me img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-bottom:1.5px solid var(--ink)}
+.me .on{color:#2a9d5c;font-size:11px}
+.me figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.me figcaption a{color:var(--blue)}.me figcaption a:hover{background:var(--blue);color:#fff}
 /* marquee */
 .marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:16px 0;font-family:"JetBrains Mono",monospace;font-size:14px}
 .marquee div{display:inline-block;white-space:nowrap;animation:mq 30s linear infinite}
@@ -109,7 +115,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .card,.card:nth-child(even){grid-template-columns:1fr;gap:26px}
   .card:nth-child(even) .browser{order:0}
   .steps{grid-template-columns:1fr 1fr}
-  .ascii-bg{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .me{justify-self:start;max-width:340px}
 }
 @media (max-width:560px){
   .wrap{padding:0 16px}
@@ -137,23 +144,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </div></nav>
 
-<header class="hero"><div class="wrap">
-<pre class="ascii-bg">
-  +-----------------------------+
-  |  ● ○ ○    lucassouto.sites  |
-  +-----------------------------+
-  |                             |
-  |   ######   ####   ######    |
-  |   #    #   #  #   #    #    |
-  |   ######   ####   ######    |
-  |                             |
-  |   ======================    |
-  |   ===============           |
-  |                             |
-  |      <a href="#contato">[ clique aqui ] --&gt;</a>    |
-  |                             |
-  +-----------------------------+
-</pre>
+<header class="hero"><div class="wrap hero-grid">
+  <div class="hero-text">
   <p class="tag">// <b>Lucas Souto Sites</b> — web design &amp; desenvolvimento</p>
   <h1>Seu negócio merece<br>um site que <em>vende</em><br>enquanto você dorme.</h1>
   <p class="lead">Crio sites sob medida, rápidos e bonitos, que transformam visitantes em clientes. Sem template genérico, sem enrolação — só um site com a cara da sua marca.</p>
@@ -161,6 +153,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <a class="btn primary" href="#contato">[ quero meu site ] <span class="arr">→</span></a>
     <a class="btn" href="#trabalhos">ver trabalhos <span class="arr">↓</span></a>
   </div>
+  </div>
+  <figure class="me">
+    <div class="bar"><span class="dots">●○○</span><span class="url">lucas.souto</span><span class="on">● online</span></div>
+    <img src="lucas.webp" alt="Lucas Souto, web designer" width="1086" height="1448">
+    <figcaption><span>Lucas Souto</span><a href="#contato">[ fale comigo ] --&gt;</a></figcaption>
+  </figure>
 </div></header>
 
 <div class="marquee"><div>
