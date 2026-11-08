@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucas Souto Sites</title>
+<meta name="description" content="Lucas Souto Sites — sites sob medida que fazem seu negócio ser lembrado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--ink:#050506;--blue:#648CFF;--muted:#6b6b72;--line:#e7e7ea}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"JetBrains Mono",monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+::selection{background:var(--blue);color:#fff}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:15px}
+.logo span{color:var(--blue)}
+.navlinks{display:flex;gap:28px;font-size:14px}
+.logo,.navlinks a{white-space:nowrap}
+.navlinks a{font-family:"JetBrains Mono",monospace;transition:color .2s}
+.navlinks a:hover{color:var(--blue)}
+.navlinks a::before{content:"[ ";color:var(--muted)} .navlinks a::after{content:" ]";color:var(--muted)}
+
+/* hero */
+.hero{padding:110px 0 90px;position:relative;overflow:hidden}
+.tag{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);margin-bottom:28px}
+.tag b{color:var(--blue);font-weight:600}
+h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(48px,9vw,120px);line-height:.95;letter-spacing:-.02em}
+h1 em{color:var(--blue)}
+.lead{max-width:560px;font-size:clamp(17px,2vw,20px);color:#2a2a30;margin-top:32px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.btn{font-family:"JetBrains Mono",monospace;font-size:14px;padding:15px 22px;border:1.5px solid var(--ink);display:inline-flex;gap:10px;align-items:center;transition:all .2s}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue)}
+.btn:not(.primary):hover{color:var(--blue);border-color:var(--blue)}
+.btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(4px)}
+.ascii-bg{position:absolute;right:-20px;top:70px;font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.25;color:#d5d9e6;white-space:pre;pointer-events:none;user-select:none}
+.ascii-bg a{color:var(--blue);pointer-events:auto;transition:background .2s}
+.ascii-bg a:hover{background:var(--blue);color:#fff}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:16px 0;font-family:"JetBrains Mono",monospace;font-size:14px}
+.marquee div{display:inline-block;white-space:nowrap;animation:mq 30s linear infinite}
+.marquee span{color:var(--blue)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:100px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px;flex-wrap:wrap}
+h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1}
+h2 em{color:var(--blue)}
+.sec-head p{max-width:380px;color:var(--muted)}
+
+/* projects */
+.grid{display:grid;gap:56px}
+.card{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center}
+.card:nth-child(even){grid-template-columns:1fr 1.35fr}
+.card:nth-child(even) .browser{order:2}
+.browser{border:1.5px solid var(--ink);background:var(--paper);box-shadow:8px 8px 0 var(--ink);transition:transform .25s,box-shadow .25s;display:block}
+.browser:hover{transform:translate(-4px,-4px);box-shadow:12px 12px 0 var(--blue)}
+.bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1.5px solid var(--ink);font-family:"JetBrains Mono",monospace;font-size:12px}
+.dots{color:var(--muted);letter-spacing:2px}
+.url{flex:1;background:#f4f5f8;padding:4px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#444}
+.screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:#f4f5f8}
+.screen iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none}
+.screen .hover{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,5,6,.0);transition:background .25s}
+.screen .hover span{font-family:"JetBrains Mono",monospace;background:var(--blue);color:#fff;padding:10px 16px;font-size:14px;opacity:0;transform:translateY(8px);transition:all .25s}
+.browser:hover .hover{background:rgba(5,5,6,.35)}
+.browser:hover .hover span{opacity:1;transform:none}
+.num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--blue)}
+.info h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(34px,4vw,48px);line-height:1.05;margin:10px 0 14px}
+.info p{color:#33333a}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 26px}
+.chips span{font-family:"JetBrains Mono",monospace;font-size:12px;border:1px solid var(--line);padding:4px 10px}
+.link{font-family:"JetBrains Mono",monospace;font-size:14px;border-bottom:1.5px solid var(--blue);padding-bottom:3px;transition:color .2s}
+.link:hover{color:var(--blue)}
+
+/* process */
+.dark{background:var(--ink);color:var(--paper)}
+.dark .sec-head p{color:#a0a0a8}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#26262b;border:1px solid #26262b}
+.step{background:var(--ink);padding:32px 26px}
+.step pre{font-family:"JetBrains Mono",monospace;color:var(--blue);font-size:13px;line-height:1.2;margin-bottom:22px}
+.step h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:28px;margin-bottom:8px}
+.step p{color:#a0a0a8;font-size:15px}
+
+/* cta */
+.final{text-align:center}
+.final h2{font-size:clamp(44px,8vw,104px)}
+.final p{max-width:520px;margin:24px auto 40px;color:#33333a;font-size:18px}
+.final .ctas{justify-content:center}
+.box{font-family:"JetBrains Mono",monospace;white-space:pre;color:var(--blue);font-size:13px;line-height:1.2;margin-bottom:30px;display:inline-block}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.reveal{opacity:0;transform:translateY(24px);transition:all .7s ease}.reveal.in{opacity:1;transform:none}
+
+@media (max-width:760px){.navlinks a.hide-sm{display:none}}
+@media (max-width:900px){
+  .card,.card:nth-child(even){grid-template-columns:1fr;gap:26px}
+  .card:nth-child(even) .browser{order:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .ascii-bg{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .navlinks{gap:10px;font-size:12px}
+  .logo{font-size:13px}
+  .navlinks a::before{content:"["} .navlinks a::after{content:"]"}
+  .navlinks a.hide-sm{display:none}
+  .hero{padding:70px 0 60px}
+  section{padding:70px 0}
+  .steps{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .browser{box-shadow:5px 5px 0 var(--ink)}
+  .box{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#" class="logo">&gt; lucas_souto<span>.sites</span></a>
+  <div class="navlinks">
+    <a href="#trabalhos">trabalhos</a>
+    <a href="#processo" class="hide-sm">processo</a>
+    <a href="#contato">contato</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+<pre class="ascii-bg">
+  +-----------------------------+
+  |  ● ○ ○    lucassouto.sites  |
+  +-----------------------------+
+  |                             |
+  |   ######   ####   ######    |
+  |   #    #   #  #   #    #    |
+  |   ######   ####   ######    |
+  |                             |
+  |   ======================    |
+  |   ===============           |
+  |                             |
+  |      <a href="#contato">[ clique aqui ] --&gt;</a>    |
+  |                             |
+  +-----------------------------+
+</pre>
+  <p class="tag">// <b>Lucas Souto Sites</b> — web design &amp; desenvolvimento</p>
+  <h1>Seu negócio merece<br>um site que <em>vende</em><br>enquanto você dorme.</h1>
+  <p class="lead">Crio sites sob medida, rápidos e bonitos, que transformam visitantes em clientes. Sem template genérico, sem enrolação — só um site com a cara da sua marca.</p>
+  <div class="ctas">
+    <a class="btn primary" href="#contato">[ quero meu site ] <span class="arr">→</span></a>
+    <a class="btn" href="#trabalhos">ver trabalhos <span class="arr">↓</span></a>
+  </div>
+</div></header>
+
+<div class="marquee"><div>
+  &nbsp;sites sob medida <span>*</span> responsivo no celular <span>*</span> carregamento rápido <span>*</span> design que converte <span>*</span> entrega ágil <span>*</span> suporte próximo <span>*</span>
+  &nbsp;sites sob medida <span>*</span> responsivo no celular <span>*</span> carregamento rápido <span>*</span> design que converte <span>*</span> entrega ágil <span>*</span> suporte próximo <span>*</span>
+</div></div>
+
+<section id="trabalhos"><div class="wrap">
+  <div class="sec-head">
+    <h2>Trabalhos <em>recentes</em></h2>
+    <p>Cada projeto nasce de uma conversa sobre o negócio. Passe o mouse — ou toque — para visitar o site ao vivo.</p>
+  </div>
+  <div class="grid">
+
+    <article class="card reveal">
+      <a class="browser" href="https://lagoaodontologia.vercel.app/" target="_blank" rel="noopener">
+        <div class="bar"><span class="dots">●○○</span><span class="url">lagoaodontologia.vercel.app</span><span>↗</span></div>
+        <div class="screen"><iframe src="https://lagoaodontologia.vercel.app/" loading="lazy" tabindex="-1" title="Lagoa Odontologia"></iframe><div class="hover"><span>[ abrir site ↗ ]</span></div></div>
+      </a>
+      <div class="info">
+        <span class="num">01 / saúde</span>
+        <h3>Lagoa Odontologia</h3>
+        <p>Site institucional para clínica odontológica: transmite confiança logo no primeiro olhar e leva o paciente direto ao agendamento.</p>
+        <div class="chips"><span>landing page</span><span>clínica</span><span>agendamento</span></div>
+        <a class="link" href="https://lagoaodontologia.vercel.app/" target="_blank" rel="noopener">&gt; visitar site ↗</a>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <a class="browser" href="https://eloraclinic.vercel.app/" target="_blank" rel="noopener">
+        <div class="bar"><span class="dots">●○○</span><span class="url">eloraclinic.vercel.app</span><span>↗</span></div>
+        <div class="screen"><iframe src="https://eloraclinic.vercel.app/" loading="lazy" tabindex="-1" title="Elora Clinic"></iframe><div class="hover"><span>[ abrir site ↗ ]</span></div></div>
+      </a>
+      <div class="info">
+        <span class="num">02 / estética</span>
+        <h3>Elora Clinic</h3>
+        <p>Presença digital elegante para clínica de estética, com visual sofisticado que valoriza os procedimentos e desperta desejo.</p>
+        <div class="chips"><span>branding</span><span>estética</span><span>conversão</span></div>
+        <a class="link" href="https://eloraclinic.vercel.app/" target="_blank" rel="noopener">&gt; visitar site ↗</a>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <a class="browser" href="https://wpcontabilidade.vercel.app/" target="_blank" rel="noopener">
+        <div class="bar"><span class="dots">●○○</span><span class="url">wpcontabilidade.vercel.app</span><span>↗</span></div>
+        <div class="screen"><iframe src="https://wpcontabilidade.vercel.app/" loading="lazy" tabindex="-1" title="WP Contabilidade"></iframe><div class="hover"><span>[ abrir site ↗ ]</span></div></div>
+      </a>
+      <div class="info">
+        <span class="num">03 / serviços</span>
+        <h3>WP Contabilidade</h3>
+        <p>Site para escritório de contabilidade que traduz seriedade em clareza: serviços bem explicados e contato a um clique.</p>
+        <div class="chips"><span>institucional</span><span>contabilidade</span><span>leads</span></div>
+        <a class="link" href="https://wpcontabilidade.vercel.app/" target="_blank" rel="noopener">&gt; visitar site ↗</a>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="processo" class="dark"><div class="wrap">
+  <div class="sec-head">
+    <h2>Como <em>funciona</em></h2>
+    <p>Um processo simples, transparente e sem surpresas — do primeiro papo ao site no ar.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><pre>[01]
+ └─&gt;</pre><h4>Conversa</h4><p>Entendo seu negócio, seu público e o que o site precisa entregar.</p></div>
+    <div class="step reveal"><pre>[02]
+ └─&gt;</pre><h4>Design</h4><p>Crio um visual exclusivo, alinhado à identidade da sua marca.</p></div>
+    <div class="step reveal"><pre>[03]
+ └─&gt;</pre><h4>Desenvolvimento</h4><p>Site rápido, responsivo e otimizado para aparecer no Google.</p></div>
+    <div class="step reveal"><pre>[04]
+ └─&gt;</pre><h4>No ar</h4><p>Publicação, ajustes finais e suporte para você crescer tranquilo.</p></div>
+  </div>
+</div></section>
+
+<section id="contato" class="final"><div class="wrap">
+<pre class="box">┌──────────────────────────────┐
+│  pronto para o próximo passo? │
+└──────────────┬───────────────┘
+               ▼</pre>
+  <h2>Vamos criar o <em>seu</em> site?</h2>
+  <p>Seu cliente já está procurando por você na internet. Faça ele encontrar um site à altura do seu trabalho.</p>
+  <div class="ctas">
+    <a class="btn primary" href="https://wa.me/5533999611482?text=Ol%C3%A1%20Lucas!%20Quero%20fazer%20meu%20site." target="_blank" rel="noopener">[ chamar no whatsapp ] <span class="arr">→</span></a>
+    <a class="btn" href="mailto:lucassouto2708@gmail.com?subject=Quero%20meu%20site">[ enviar e-mail ] <span class="arr">→</span></a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Lucas Souto Sites</span>
+  <span>feito à mão, pixel por pixel<span class="blink">_</span></span>
+</div></footer>
+
+<script>
+// escala os previews ao tamanho do card
+function scale(){document.querySelectorAll('.screen').forEach(s=>{const f=s.querySelector('iframe');f.style.transform='scale('+(s.clientWidth/1440)+')'})}
+addEventListener('resize',scale);scale();
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
