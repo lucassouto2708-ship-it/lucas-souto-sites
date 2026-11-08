@@ -53,9 +53,12 @@ h1 em{color:var(--blue)}
 .me figcaption a{color:var(--blue)}.me figcaption a:hover{background:var(--blue);color:#fff}
 /* marquee */
 .marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:16px 0;font-family:"JetBrains Mono",monospace;font-size:14px}
-.marquee div{display:inline-block;white-space:nowrap;animation:mq 30s linear infinite}
-.marquee span{color:var(--blue)}
-@keyframes mq{to{transform:translateX(-50%)}}
+.marquee .track{display:flex;width:max-content;animation:mq 60s linear infinite;will-change:transform}
+.marquee .grp{display:flex;align-items:center;flex-shrink:0}
+.marquee .it{white-space:nowrap;padding:0 28px}
+.marquee .st{color:var(--blue)}
+@keyframes mq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media (prefers-reduced-motion:reduce){.marquee .track{animation-duration:180s}}
 
 /* sections */
 section{padding:100px 0}
@@ -161,10 +164,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </figure>
 </div></header>
 
-<div class="marquee"><div>
-  &nbsp;sites sob medida <span>*</span> responsivo no celular <span>*</span> carregamento rápido <span>*</span> design que converte <span>*</span> entrega ágil <span>*</span> suporte próximo <span>*</span>
-  &nbsp;sites sob medida <span>*</span> responsivo no celular <span>*</span> carregamento rápido <span>*</span> design que converte <span>*</span> entrega ágil <span>*</span> suporte próximo <span>*</span>
-</div></div>
+<div class="marquee" aria-label="sites sob medida, responsivo, rápido, design que converte"><div class="track"><div class="grp"><span class="it">sites sob medida</span><span class="st">✦</span><span class="it">responsivo no celular</span><span class="st">✦</span><span class="it">carregamento rápido</span><span class="st">✦</span><span class="it">design que converte</span><span class="st">✦</span><span class="it">entrega ágil</span><span class="st">✦</span><span class="it">suporte próximo</span><span class="st">✦</span><span class="it">sites sob medida</span><span class="st">✦</span><span class="it">responsivo no celular</span><span class="st">✦</span><span class="it">carregamento rápido</span><span class="st">✦</span><span class="it">design que converte</span><span class="st">✦</span><span class="it">entrega ágil</span><span class="st">✦</span><span class="it">suporte próximo</span><span class="st">✦</span><span class="it">sites sob medida</span><span class="st">✦</span><span class="it">responsivo no celular</span><span class="st">✦</span><span class="it">carregamento rápido</span><span class="st">✦</span><span class="it">design que converte</span><span class="st">✦</span><span class="it">entrega ágil</span><span class="st">✦</span><span class="it">suporte próximo</span><span class="st">✦</span></div><div class="grp" aria-hidden="true"><span class="it">sites sob medida</span><span class="st">✦</span><span class="it">responsivo no celular</span><span class="st">✦</span><span class="it">carregamento rápido</span><span class="st">✦</span><span class="it">design que converte</span><span class="st">✦</span><span class="it">entrega ágil</span><span class="st">✦</span><span class="it">suporte próximo</span><span class="st">✦</span><span class="it">sites sob medida</span><span class="st">✦</span><span class="it">responsivo no celular</span><span class="st">✦</span><span class="it">carregamento rápido</span><span class="st">✦</span><span class="it">design que converte</span><span class="st">✦</span><span class="it">entrega ágil</span><span class="st">✦</span><span class="it">suporte próximo</span><span class="st">✦</span><span class="it">sites sob medida</span><span class="st">✦</span><span class="it">responsivo no celular</span><span class="st">✦</span><span class="it">carregamento rápido</span><span class="st">✦</span><span class="it">design que converte</span><span class="st">✦</span><span class="it">entrega ágil</span><span class="st">✦</span><span class="it">suporte próximo</span><span class="st">✦</span></div></div></div>
 
 <section id="trabalhos"><div class="wrap">
   <div class="sec-head">
